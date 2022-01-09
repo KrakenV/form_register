@@ -21,7 +21,7 @@ const resetInfo = () => {
 const pushInfo = () => {
     arrInfo.push(firstName.value, lastName.value, getEmail.value, getPassword.value, getCalendar.value);
     arrInfo.forEach((item, index) => {
-        console.log(`${index + 1}) ${item}`);
+        alert(`${index + 1}) ${item}`);
     });
 
     resetInfo();
