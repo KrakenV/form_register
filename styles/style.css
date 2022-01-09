@@ -42,6 +42,8 @@ body {
 }
 
 #form_get-submit {
+    display: block;
+    text-decoration: none;
     margin-top: 30px;
     border: 6px solid white;
     background: transparent;

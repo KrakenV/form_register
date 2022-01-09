@@ -4,11 +4,9 @@ const getEmail = document.getElementById('email');
 const getPassword = document.getElementById('password');
 const getCalendar = document.getElementById('calendar');
 
-const submitBtn = document.getElementById('form_get-submit');
+let submitBtn = document.getElementById('form_get-submit');
 
 let arrInfo = [];
-
-console.log(firstName.value);
 
 const resetInfo = () => {
     firstName.value = '';
@@ -18,13 +16,19 @@ const resetInfo = () => {
     getCalendar.value = '';
 }
 
+const setDataToEmail = () => {
+    submitBtn.href += `?subject=Здравствуйте, меня зовут ${arrInfo[0]} ${arrInfo[1]}&body=${arrInfo[3]} ${arrInfo[4]}`;
+}
+
 const pushInfo = () => {
     arrInfo.push(firstName.value, lastName.value, getEmail.value, getPassword.value, getCalendar.value);
-    arrInfo.forEach((item, index) => {
-        alert(`${index + 1}) ${item}`);
-    });
 
+    submitBtn.href = 'mailto:leonzendero@gmail.com';
+    setDataToEmail()
     resetInfo();
+    arrInfo = [];
+
+    console.log('submitBtn')
 }
 
 submitBtn.addEventListener('click', function () {pushInfo()});
